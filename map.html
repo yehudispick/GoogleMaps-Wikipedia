@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,
+        body,
+        #map{
+            height: 100%;
+            width: auto;
+            padding: 0;
+            margin: 0;
+        }
+        #name{
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            color: white;
+        }
+        #searchbox{
+            padding: 1em;
+            position:fixed;
+            left: 78%;
+            z-index: 1;
+        }
+        input,
+        #search{
+            border-radius: 5px;
+        }
+        #search{
+            background-color: lightblue;
+            
+        }
+        
+        #sidebar {
+            height: 100%;
+            margin: 0;
+            float: left;
+            width: 20%;
+            overflow-y: scroll;
+            box-sizing: border-box;
+            padding-left: 1em;
+            padding-right: 1em;
+            display: none;
+        }
+        #sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #sidebar li {
+            margin-bottom: 1em;
+            cursor: pointer;
+            padding: 2px;
+            border: 1px dotted black;
+            border-radius: 5px;
+            overflow: auto;
+        }
+        #sidebar #title:hover {
+            text-decoration: underline;
+        }
+        #title{
+            text-align: center; 
+            font-weight: bold;
+            display: inline-block;
+            
+        }
+        #sidebar img{
+            width: 50px;
+            height: 40px;
+            vertical-align: middle;
+            margin-right: 2px;
+
+        }
+        .summary{
+            display: none;
+        }
+        #miles,
+        #distance{
+           float: right;
+           padding: 2px;
+           background-color: rgb(180, 168, 168);
+           color: white;
+           border-radius: 5px;
+
+        }
+    </style>
+</head>
+
+<body>   
+    
+    <aside id="sidebar">
+        <ul></ul>
+    </aside>
+    <div id="searchbox">
+         <h2 id="name">Search for a location</h2>
+         <form id="inputForm">
+            <input id="input">
+            <input  id ="rows" type="number" min="10" max="2000" step="10" value="10">
+            <button id="search">Search</button>
+        </form>
+
+    </div>
+    <div id="map"></div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6TGijI03fUpcX9sYSRN7rKIaaNGJRc2Q&callback=initMap&libraries=drawing" async defer></script>
+    <script src="map.js"></script>
+    
+</body>
+</html>
